@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Suraj Travels — Explore the Beauty of Sri Lanka</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ======================== CSS ======================== -->
+  <style>
+    /* ---------- CSS Variables / Color Theme ---------- */
+    :root {
+      --primary: #0C4A6E;        /* Deep ocean blue */
+      --primary-light: #0E7490;  /* Teal */
+      --secondary: #059669;      /* Emerald green */
+      --secondary-light: #10B981;
+      --accent: #F59E0B;         /* Sunset amber */
+      --accent-dark: #D97706;
+      --sunset: #F97316;         /* Sunset orange */
+      --light: #F0FDFA;          /* Light mint */
+      --lighter: #ECFEFF;        /* Cyan 50 */
+      --dark: #0F172A;           /* Navy dark */
+      --text: #1E293B;           /* Slate 800 */
+      --text-light: #64748B;     /* Slate 500 */
+      --white: #FFFFFF;
+      --border: #E2E8F0;         /* Slate 200 */
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+      --radius: 12px;
+      --radius-lg: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-body: 'Inter', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+    }
+
+    /* ---------- Reset & Base ---------- */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul { list-style: none; }
+
+    /* ---------- Utility Classes ---------- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(5,150,105,0.1), rgba(14,116,144,0.1));
+      padding: 8px 16px;
+      border-radius: 50px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--text-light);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(5,150,105,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(5,150,105,0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--primary);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, var(--accent), var(--sunset));
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(245,158,11,0.4);
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(245,158,11,0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Navigation ---------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      padding: 10px 0;
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 1001;
+    }
+
+    .nav-logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 20px;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled .nav-logo-text {
+      color: var(--dark);
+    }
+
+    .nav-logo-text span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .navbar.scrolled .nav-links a {
+      color: var(--text-light);
+    }
+
+    .navbar.scrolled .nav-links a:hover,
+    .navbar.scrolled .nav-links a.active {
+      color: var(--primary);
+      background: rgba(12,74,110,0.08);
+    }
+
+    .nav-cta {
+      margin-left: 12px;
+    }
+
+    .nav-cta .btn {
+      padding: 10px 24px;
+      font-size: 13px;
+    }
+
+    .navbar.scrolled .nav-cta .btn {
+      background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+      color: var(--white);
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+      padding: 4px;
+    }
+
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled .menu-toggle span {
+      background: var(--dark);
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15,23,42,0.75) 0%,
+        rgba(12,74,110,0.5) 50%,
+        rgba(5,150,105,0.3) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 24px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    .hero-badge i {
+      color: var(--accent);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(40px, 7vw, 72px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      display: block;
+      background: linear-gradient(135deg, var(--accent), var(--sunset));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-number {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .hero-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-indicator .line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+    }
+
+    /* ---------- About Section ---------- */
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+    }
+
+    .about-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-image-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: linear-gradient(135deg, var(--accent), var(--sunset));
+      color: var(--white);
+      padding: 20px 28px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-image-badge .number {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .about-image-badge .text {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .about-content .section-subtitle {
+      margin-bottom: 32px;
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .about-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .about-feature-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: linear-gradient(135deg, rgba(5,150,105,0.1), rgba(14,116,144,0.1));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--secondary);
+      font-size: 20px;
+    }
+
+    .about-feature h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--dark);
+    }
+
+    .about-feature p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ---------- Services Section ---------- */
+    .services {
+      background: var(--light);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary-light));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(5,150,105,0.1);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    .service-icon.beach {
+      background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(6,182,212,0.05));
+      color: #06B6D4;
+    }
+
+    .service-icon.wildlife {
+      background: linear-gradient(135deg, rgba(5,150,105,0.15), rgba(5,150,105,0.05));
+      color: var(--secondary);
+    }
+
+    .service-icon.cultural {
+      background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.05));
+      color: var(--accent);
+    }
+
+    .service-icon.adventure {
+      background: linear-gradient(135deg, rgba(249,115,22,0.15), rgba(249,115,22,0.05));
+      color: var(--sunset);
+    }
+
+    .service-icon.transport {
+      background: linear-gradient(135deg, rgba(12,74,110,0.15), rgba(12,74,110,0.05));
+      color: var(--primary);
+    }
+
+    .service-icon.hotel {
+      background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(168,85,247,0.05));
+      color: #A855F7;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .service-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .service-card-link:hover {
+      gap: 10px;
+      color: var(--primary);
+    }
+
+    /* ---------- Tour Packages Section ---------- */
+    .tours {
+      background: var(--white);
+    }
+
+    .tours-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .tour-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .tour-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: transparent;
+    }
+
+    .tour-card-image {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .tour-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .tour-card:hover .tour-card-image img {
+      transform: scale(1.1);
+    }
+
+    .tour-card-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .tour-card-duration {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tour-card-content {
+      padding: 24px;
+    }
+
+    .tour-card-location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .tour-card-location i {
+      color: var(--secondary);
+      font-size: 12px;
+    }
+
+    .tour-card-content h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .tour-card-content p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .tour-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .tour-card-price {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .tour-card-price strong {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .tour-card-price span {
+      font-size: 13px;
+    }
+
+    /* ---------- Gallery Section ---------- */
+    .gallery {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(5,150,105,0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .gallery .section-label {
+      background: rgba(5,150,105,0.2);
+      color: var(--secondary-light);
+    }
+
+    .gallery .section-title {
+      color: var(--white);
+    }
+
+    .gallery .section-subtitle {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 220px);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15,23,42,0.8), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-overlay span {
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .gallery-item-overlay i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      color: var(--white);
+      font-size: 24px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-item-overlay i {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: var(--radius);
+      transform: scale(0.9);
+      transition: transform 0.4s ease;
+    }
+
+    .lightbox.active img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 24px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .lightbox-prev { left: 24px; }
+    .lightbox-next { right: 24px; }
+
+    /* ---------- Contact Section ---------- */
+    .contact {
+      background: var(--light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .contact-info-icon {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 20px;
+    }
+
+    .contact-info-item h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .contact-info-item p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .contact-map {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 200px;
+      margin-top: 8px;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Contact Form */
+    .contact-form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-form-card h3 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .contact-form-card > p {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--light);
+      border: 2px solid transparent;
+      border-radius: 10px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--secondary);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(5,150,105,0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group .error-message {
+      font-size: 12px;
+      color: #EF4444;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .form-group.error input,
+    .form-group.error textarea {
+      border-color: #EF4444;
+      background: #FEF2F2;
+    }
+
+    .form-group.error .error-message {
+      display: block;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .form-submit .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 16px;
+    }
+
+    /* Form Success Message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .form-success.show {
+      display: block;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .form-success i {
+      font-size: 48px;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+
+    .form-success h3 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .form-success p {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      padding: 64px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand .nav-logo {
+      margin-bottom: 20px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 16px;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--secondary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .footer-column h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      transition: var(--transition);
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--secondary-light);
+      padding-left: 4px;
+    }
+
+    .footer-newsletter p {
+      font-size: 14px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .footer-newsletter-form {
+      display: flex;
+      gap: 8px;
+    }
+
+    .footer-newsletter-form input {
+      flex: 1;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-family: var(--font-body);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      color: var(--white);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .footer-newsletter-form input::placeholder {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-newsletter-form input:focus {
+      border-color: var(--secondary);
+    }
+
+    .footer-newsletter-form button {
+      padding: 12px 20px;
+      background: var(--secondary);
+      border: none;
+      border-radius: 10px;
+      color: var(--white);
+      font-size: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .footer-newsletter-form button:hover {
+      background: var(--secondary-light);
+    }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .footer-bottom a {
+      color: var(--secondary-light);
+      transition: var(--transition);
+    }
+
+    .footer-bottom a:hover {
+      color: var(--white);
+    }
+
+    /* ---------- Toast Notification ---------- */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 3000;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      box-shadow: var(--shadow-xl);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transform: translateY(120%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+    }
+
+    .toast i {
+      font-size: 20px;
+      color: var(--secondary);
+    }
+
+    .toast-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    /* ---------- Animations ---------- */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tours-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 200px);
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      /* Mobile Navigation */
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 360px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 100px 32px 32px;
+        gap: 4px;
+        box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .nav-links.open {
+        right: 0;
+      }
+
+      .nav-links a {
+        color: var(--text) !important;
+        padding: 12px 16px;
+        font-size: 15px;
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        background: rgba(5,150,105,0.1) !important;
+        color: var(--secondary) !important;
+      }
+
+      .nav-cta {
+        margin-left: 0;
+        margin-top: 16px;
+        width: 100%;
+      }
+
+      .nav-cta .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      /* Mobile overlay */
+      .nav-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+      }
+
+      .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Hero */
+      .hero-stats {
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .hero-stat-number {
+        font-size: 28px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+
+      /* About */
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-image img {
+        height: 350px;
+      }
+
+      .about-image-badge {
+        right: 16px;
+        bottom: -12px;
+      }
+
+      /* Services */
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Tours */
+      .tours-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Gallery */
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 180px);
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      /* Contact */
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form-card {
+        padding: 28px;
+      }
+
+      /* Footer */
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+
+      .lightbox-nav {
+        display: none;
+      }
+
+      .scroll-indicator {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 160px);
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ====================== NAVIGATION ====================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#home" class="nav-logo">
+        <div class="nav-logo-icon">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="nav-logo-text">Sri Suraj <span>Travels</span></div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#tours">Packages</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <div class="nav-cta">
+          <a href="#contact" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-overlay" id="navOverlay"></div>
+  </nav>
+
+  <!-- ====================== HERO SECTION ====================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <!-- Sri Lanka beach/tropical landscape -->
+      <img src="https://picsum.photos/seed/srilanka-beach-tropical/1920/1080.jpg" alt="Sri Lanka tropical beach">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-star"></i>
+        Award-Winning Travel Agency in Sri Lanka
+      </div>
+      <h1 class="hero-title">
+        Explore the Beauty
+        <span>of Sri Lanka</span>
+      </h1>
+      <p class="hero-description">
+        From pristine beaches to ancient temples, lush tea plantations to thrilling wildlife safaris — discover paradise with personalized tours crafted just for you.
+      </p>
+      <div class="hero-buttons">
+        <a href="#tours" class="btn btn-primary">
+          <i class="fa-solid fa-compass"></i> Explore Tours
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fa-solid fa-phone"></i> Get in Touch
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">15K+</div>
+          <div class="hero-stat-label">Happy Travelers</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">200+</div>
+          <div class="hero-stat-label">Tour Packages</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">50+</div>
+          <div class="hero-stat-label">Destinations</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">12+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      Scroll Down
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- ====================== ABOUT SECTION ====================== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrapper reveal">
+          <div class="about-image">
+            <img src="https://picsum.photos/seed/srilanka-temple-culture/800/600.jpg" alt="Sri Lankan cultural heritage">
+          </div>
+          <div class="about-image-badge">
+            <div class="number">12+</div>
+            <div class="text">Years of<br>Excellence</div>
+          </div>
+        </div>
+
+        <div class="about-content reveal reveal-delay-2">
+          <div class="section-label">
+            <i class="fa-solid fa-info-circle"></i> About Us
+          </div>
+          <h2 class="section-title">
+            Your Trusted Travel <span class="gradient-text">Partner in Sri Lanka</span>
+          </h2>
+          <p class="section-subtitle">
+            Sri Suraj Travels has been crafting unforgettable journeys across Sri Lanka since 2012. We are a team of passionate locals who know every hidden gem of this beautiful island nation.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <div>
+                <h4>Our Mission</h4>
+                <p>To provide authentic, sustainable, and personalized travel experiences that showcase the true spirit and beauty of Sri Lanka to the world.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <div>
+                <h4>Our Vision</h4>
+                <p>To become the most trusted and innovative travel company in South Asia, setting new standards for responsible tourism and customer satisfaction.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div>
+                <h4>Why Choose Us</h4>
+                <p>Local expertise, 24/7 support, flexible packages, licensed guides, and a commitment to making every trip safe, memorable, and hassle-free.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#services" class="btn btn-outline">
+            <i class="fa-solid fa-arrow-right"></i> Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== SERVICES SECTION ====================== -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label mx-auto">
+          <i class="fa-solid fa-concierge-bell"></i> Our Services
+        </div>
+        <h2 class="section-title">Everything You Need for a <span class="gradient-text">Perfect Trip</span></h2>
+        <p class="section-subtitle mx-auto">From curated tour packages to seamless logistics, we handle every detail so you can focus on creating memories.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Beach Tours -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon beach">
+            <i class="fa-solid fa-umbrella-beach"></i>
+          </div>
+          <h3>Beach Tours</h3>
+          <p>Relax on world-class beaches from Unawatuna to Mirissa. Enjoy sunsets, surfing, snorkeling, and beachside dining.</p>
+          <a href="#tours" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Wildlife Tours -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon wildlife">
+            <i class="fa-solid fa-paw"></i>
+          </div>
+          <h3>Wildlife Tours</h3>
+          <p>Experience thrilling safaris in Yala, Udawalawe, and Minneriya. Spot leopards, elephants, and exotic bird species.</p>
+          <a href="#tours" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Cultural Tours -->
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon cultural">
+            <i class="fa-solid fa-landmark"></i>
+          </div>
+          <h3>Cultural Tours</h3>
+          <p>Explore ancient cities, UNESCO World Heritage Sites, temples, and the rich cultural tapestry of Sri Lanka.</p>
+          <a href="#tours" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Adventure Tours -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon adventure">
+            <i class="fa-solid fa-person-hiking"></i>
+          </div>
+          <h3>Adventure Tours</h3>
+          <p>Hike Ella's peaks, white-water raft in Kitulgala, zip-line in Kandy, and explore Adam's Peak at sunrise.</p>
+          <a href="#tours" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Transport Services -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon transport">
+            <i class="fa-solid fa-van-shuttle"></i>
+          </div>
+          <h3>Transport Services</h3>
+          <p>Airport transfers, private cars, AC vans, and chauffeur-driven vehicles with experienced local drivers.</p>
+          <a href="#contact" class="service-card-link">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Hotel Booking -->
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon hotel">
+            <i class="fa-solid fa-hotel"></i>
+          </div>
+          <h3>Hotel Booking</h3>
+          <p>Handpicked accommodations from boutique homestays to luxury resorts — all verified for quality and comfort.</p>
+          <a href="#contact" class="service-card-link">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== TOUR PACKAGES SECTION ====================== -->
+  <section class="section tours" id="tours">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label mx-auto">
+          <i class="fa-solid fa-suitcase-rolling"></i> Tour Packages
+        </div>
+        <h2 class="section-title">Popular Travel <span class="gradient-text">Packages</span></h2>
+        <p class="section-subtitle mx-auto">Handcrafted itineraries designed to give you the best of Sri Lanka — from coast to countryside.</p>
+      </div>
+
+      <div class="tours-grid">
+        <!-- Package 1 -->
+        <div class="tour-card reveal reveal-delay-1">
+          <div class="tour-card-image">
+            <img src="https://picsum.photos/seed/srilanka-southern-coast/600/400.jpg" alt="Southern Coast Beach Tour">
+            <div class="tour-card-badge">Popular</div>
+            <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 5 Days</div>
+          </div>
+          <div class="tour-card-content">
+            <div class="tour-card-location"><i class="fa-solid fa-location-dot"></i> Southern Coast, Sri Lanka</div>
+            <h3>Southern Beach Bliss</h3>
+            <p>Unwind on golden beaches from Galle to Tangalle. Includes whale watching, snorkeling, and colonial fort tours.</p>
+            <div class="tour-card-footer">
+              <div class="tour-card-price">
+                <strong>$450</strong> <span>/ person</span>
+              </div>
+              <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="tour-card reveal reveal-delay-2">
+          <div class="tour-card-image">
+            <img src="https://picsum.photos/seed/srilanka-wildlife-safari/600/400.jpg" alt="Wildlife Safari Tour">
+            <div class="tour-card-badge" style="background: var(--secondary);">Best Seller</div>
+            <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 4 Days</div>
+          </div>
+          <div class="tour-card-content">
+            <div class="tour-card-location"><i class="fa-solid fa-location-dot"></i> Yala & Udawalawe</div>
+            <h3>Wildlife Safari Adventure</h3>
+            <p>Track leopards in Yala, witness elephant gatherings in Udawalawe, and explore Bundala bird sanctuary.</p>
+            <div class="tour-card-footer">
+              <div class="tour-card-price">
+                <strong>$380</strong> <span>/ person</span>
+              </div>
+              <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="tour-card reveal reveal-delay-3">
+          <div class="tour-card-image">
+            <img src="https://picsum.photos/seed/srilanka-cultural-heritage/600/400.jpg" alt="Cultural Heritage Tour">
+            <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 7 Days</div>
+          </div>
+          <div class="tour-card-content">
+            <div class="tour-card-location"><i class="fa-solid fa-location-dot"></i> Cultural Triangle</div>
+            <h3>Ancient Heritage Trail</h3>
+            <p>Journey through Anuradhapura, Polonnaruwa, Sigiriya, and Kandy — the heart of Sri Lanka's ancient civilization.</p>
+            <div class="tour-card-footer">
+              <div class="tour-card-price">
+                <strong>$620</strong> <span>/ person</span>
+              </div>
+              <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="tour-card reveal reveal-delay-1">
+          <div class="tour-card-image">
+            <img src="https://picsum.photos/seed/srilanka-hill-country-tea/600/400.jpg" alt="Hill Country Tour">
+            <div class="tour-card-badge" style="background: #8B5CF6;">Scenic</div>
+            <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 6 Days</div>
+          </div>
+          <div class="tour-card-content">
+            <div class="tour-card-location"><i class="fa-solid fa-location-dot"></i> Nuwara Eliya & Ella</div>
+            <h3>Hill Country Escapade</h3>
+            <p>Ride the scenic train through tea estates, hike Little Adam's Peak, and visit misty waterfalls in the highlands.</p>
+            <div class="tour-card-footer">
+              <div class="tour-card-price">
+                <strong>$520</strong> <span>/ person</span>
+              </div>
+              <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 5 -->
+        <div class="tour-card reveal reveal-delay-2">
+          <div class="tour-card-image">
+            <img src="https://picsum.photos/seed/srilanka-adventure-rafting/600/400.jpg" alt="Adventure Tour">
+            <div class="tour-card-badge" style="background: var(--sunset);">Thrilling</div>
+            <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 3 Days</div>
+          </div>
+          <div class="tour-card-content">
+            <div class="tour-card-location"><i class="fa-solid fa-location-dot"></i> Kitulgala & Kandy</div>
+            <h3>Adventure Rush Package</h3>
+            <p>White-water rafting, zip-lining, rock climbing, and cave exploration — an adrenaline-filled getaway.</p>
+            <div class="tour-card-footer">
+              <div class="tour-card-price">
+                <strong>$290</strong> <span>/ person</span>
+              </div>
+              <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="tour-card reveal reveal-delay-3">
+          <div class="tour-card-image">
+            <img src="https://picsum.photos/seed/srilanka-complete-tour/600/400.jpg" alt="Complete Sri Lanka Tour">
+            <div class="tour-card-badge" style="background: var(--primary);">Premium</div>
+            <div class="tour-card-duration"><i class="fa-regular fa-clock"></i> 14 Days</div>
+          </div>
+          <div class="tour-card-content">
+            <div class="tour-card-location"><i class="fa-solid fa-location-dot"></i> All Across Sri Lanka</div>
+            <h3>Complete Sri Lanka Experience</h3>
+            <p>The ultimate all-in-one tour covering beaches, wildlife, culture, hills, and adventure across the entire island.</p>
+            <div class="tour-card-footer">
+              <div class="tour-card-price">
+                <strong>$1,250</strong> <span>/ person</span>
+              </div>
+              <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 13px;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== GALLERY SECTION ====================== -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label mx-auto">
+          <i class="fa-solid fa-images"></i> Gallery
+        </div>
+        <h2 class="section-title">Captured Moments from <span style="color: var(--secondary-light);">Paradise</span></h2>
+        <p class="section-subtitle mx-auto">A glimpse into the unforgettable experiences our travelers have enjoyed across Sri Lanka.</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item" data-index="0">
+          <img src="https://picsum.photos/seed/srilanka-sigiriya-rock/800/800.jpg" alt="Sigiriya Rock Fortress">
+          <div class="gallery-item-overlay">
+            <i class="fa-solid fa-expand"></i>
+            <span>Sigiriya Rock Fortress</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-index="1">
+          <img src="https://picsum.photos/seed/srilanka-elephants-safari/600/400.jpg" alt="Elephant Safari">
+          <div class="gallery-item-overlay">
+            <i class="fa-solid fa-expand"></i>
+            <span>Elephant Safari</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-index="2">
+          <img src="https://picsum.photos/seed/srilanka-tea-plantation/600/400.jpg" alt="Tea Plantations">
+          <div class="gallery-item-overlay">
+            <i class="fa-solid fa-expand"></i>
+            <span>Tea Plantations</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-index="3">
+          <img src="https://picsum.photos/seed/srilanka-galle-fort/600/400.jpg" alt="Galle Fort">
+          <div class="gallery-item-overlay">
+            <i class="fa-solid fa-expand"></i>
+            <span>Galle Fort</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-index="4">
+          <img src="https://picsum.photos/seed/srilanka-waterfall-nature/600/400.jpg" alt="Waterfalls">
+          <div class="gallery-item-overlay">
+            <i class="fa-solid fa-expand"></i>
+            <span>Waterfalls</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-index="5">
+          <img src="https://picsum.photos/seed/srilanka-scenic-train/600/400.jpg" alt="Scenic Train Ride">
+          <div class="gallery-item-overlay">
+            <i class="fa-solid fa-expand"></i>
+            <span>Scenic Train Ride</span>
+          </div>
+        </div>
+        <div class="gallery-item" data-index="6">
+          <img src="https://picsum.photos/seed/srilanka-beach-sunset-orange/600/400.jpg" alt="Beach Sunset">
+          <div class="gallery-item-overlay">
+            <i class="fa-solid fa-expand"></i>
+            <span>Beach Sunset</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <img src="" alt="Gallery Image" id="lightboxImg">
+  </div>
+
+  <!-- ====================== CONTACT SECTION ====================== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label mx-auto">
+          <i class="fa-solid fa-envelope"></i> Contact Us
+        </div>
+        <h2 class="section-title">Let's Plan Your <span class="gradient-text">Dream Vacation</span></h2>
+        <p class="section-subtitle mx-auto">Reach out to us and our travel experts will craft a personalized itinerary just for you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info reveal">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              <p>+94 77 123 4567<br>+94 11 234 5678</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>info@sr surajtravels.com<br>bookings@sr surajtravels.com</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <h4>Location</h4>
+              <p>42 Galle Road, Colombo 03,<br>Sri Lanka</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div>
+              <h4>Working Hours</h4>
+              <p>Mon – Sat: 8:00 AM – 7:00 PM<br>Sunday: 9:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+
+          <div class="contact-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8!2d79.85!3d6.91!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTQnMzYuMCJOIDc5wrA1MScwMC4wIkU!5e0!3m2!1sen!2slk!4v1" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card reveal reveal-delay-2">
+          <h3>Send Us a Message</h3>
+          <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Your full name">
+                <div class="error-message">Please enter your name</div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com">
+                <div class="error-message">Please enter a valid email</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+94 XX XXX XXXX">
+                <div class="error-message">Please enter a valid phone number</div>
+              </div>
+              <div class="form-group">
+                <label for="interest">Interested In</label>
+                <select id="interest" name="interest">
+                  <option value="">Select a package</option>
+                  <option value="beach">Beach Tours</option>
+                  <option value="wildlife">Wildlife Tours</option>
+                  <option value="cultural">Cultural Tours</option>
+                  <option value="adventure">Adventure Tours</option>
+                  <option value="transport">Transport Services</option>
+                  <option value="hotel">Hotel Booking</option>
+                  <option value="custom">Custom Package</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" placeholder="Tell us about your dream trip..."></textarea>
+              <div class="error-message">Please enter your message</div>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </div>
+          </form>
+
+          <!-- Success State -->
+          <div class="form-success" id="formSuccess">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. Our team will contact you within 24 hours with a personalized response.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">
+            <div class="nav-logo-icon">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <div class="nav-logo-text">Sri Suraj <span>Travels</span></div>
+          </a>
+          <p>Your trusted partner for exploring the stunning beauty, rich culture, and thrilling adventures of Sri Lanka since 2012.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#tours">Tour Packages</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Top Destinations -->
+        <div class="footer-column">
+          <h4>Top Destinations</h4>
+          <ul>
+            <li><a href="#">Sigiriya</a></li>
+            <li><a href="#">Ella</a></li>
+            <li><a href="#">Yala National Park</a></li>
+            <li><a href="#">Galle Fort</a></li>
+            <li><a href="#">Nuwara Eliya</a></li>
+            <li><a href="#">Mirissa Beach</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-column footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to our newsletter for exclusive travel deals, tips, and Sri Lanka travel guides.</p>
+          <form class="footer-newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Sri Suraj Travels. All rights reserved.</p>
+        <p>Designed with <i class="fa-solid fa-heart" style="color: var(--sunset);"></i> in <a href="#">Sri Lanka</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span class="toast-text" id="toastText">Success!</span>
+  </div>
+
+
+  <!-- ====================== JAVASCRIPT ====================== -->
+  <script>
+    /* ================================================
+       SRI SURAJ TRAVELS — Main JavaScript
+       ================================================ */
+
+    // ---------- DOM Element References ----------
+    const navbar = document.getElementById('navbar');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navOverlay = document.getElementById('navOverlay');
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toastText');
+    const newsletterForm = document.getElementById('newsletterForm');
+
+    // ---------- 1. Sticky Navbar on Scroll ----------
+    function handleNavbarScroll() {
+      if (window.scrollY > 80) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleNavbarScroll);
+
+    // ---------- 2. Active Nav Link on Scroll ----------
+    function updateActiveNavLink() {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPos = window.scrollY + 120;
+
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+
+        if (link) {
+          if (scrollPos >= top && scrollPos < top + height) {
+            // Remove active from all links
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+            link.classList.add('active');
+          }
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveNavLink);
+
+    // ---------- 3. Mobile Menu Toggle ----------
+    function openMenu() {
+      menuToggle.classList.add('active');
+      navLinks.classList.add('open');
+      navOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('open');
+      navOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    menuToggle.addEventListener('click', () => {
+      if (navLinks.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    navOverlay.addEventListener('click', closeMenu);
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    // ---------- 4. Scroll Reveal Animation ----------
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 80) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    // Trigger on load as well
+    window.addEventListener('load', revealOnScroll);
+
+    // ---------- 5. Gallery Lightbox ----------
+    // Collect all gallery images
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryImages = [];
+    let currentImageIndex = 0;
+
+    galleryItems.forEach(item => {
+      const img = item.querySelector('img');
+      galleryImages.push(img.src);
+    });
+
+    // Open lightbox
+    function openLightbox(index) {
+      currentImageIndex = index;
+      lightboxImg.src = galleryImages[index];
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close lightbox
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Navigate lightbox
+    function showPrevImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentImageIndex];
+    }
+
+    function showNextImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentImageIndex];
+    }
+
+    // Event listeners for gallery items
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const index = parseInt(item.getAttribute('data-index'));
+        openLightbox(index);
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', showPrevImage);
+    lightboxNext.addEventListener('click', showNextImage);
+
+    // Close lightbox on background click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrevImage();
+      if (e.key === 'ArrowRight') showNextImage();
+    });
+
+    // ---------- 6. Contact Form Validation ----------
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function showError(group, message) {
+      group.classList.add('error');
+      const errorEl = group.querySelector('.error-message');
+      if (errorEl && message) {
+        errorEl.textContent = message;
+      }
+    }
+
+    function clearError(group) {
+      group.classList.remove('error');
+    }
+
+    // Clear errors on input
+    contactForm.querySelectorAll('input, textarea').forEach(input => {
+      input.addEventListener('input', () => {
+        clearError(input.closest('.form-group'));
+      });
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+
+      // Validate Name
+      const nameGroup = document.getElementById('name').closest('.form-group');
+      const nameValue = document.getElementById('name').value.trim();
+      if (!nameValue) {
+        showError(nameGroup, 'Please enter your name');
+        isValid = false;
+      } else {
+        clearError(nameGroup);
+      }
+
+      // Validate Email
+      const emailGroup = document.getElementById('email').closest('.form-group');
+      const emailValue = document.getElementById('email').value.trim();
+      if (!emailValue) {
+        showError(emailGroup, 'Please enter your email');
+        isValid = false;
+      } else if (!validateEmail(emailValue)) {
+        showError(emailGroup, 'Please enter a valid email address');
+        isValid = false;
+      } else {
+        clearError(emailGroup);
+      }
+
+      // Validate Message
+      const messageGroup = document.getElementById('message').closest('.form-group');
+      const messageValue = document.getElementById('message').value.trim();
+      if (!messageValue) {
+        showError(messageGroup, 'Please enter your message');
+        isValid = false;
+      } else {
+        clearError(messageGroup);
+      }
+
+      if (isValid) {
+        // Hide form, show success
+        contactForm.style.display = 'none';
+        contactForm.previousElementSibling.style.display = 'none'; // Hide the h3
+        formSuccess.classList.add('show');
+        showToast('Message sent successfully!');
+      }
+    });
+
+    // ---------- 7. Toast Notification ----------
+    function showToast(message) {
+      toastText.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    // ---------- 8. Newsletter Form ----------
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = newsletterForm.querySelector('input');
+      if (emailInput.value.trim() && validateEmail(emailInput.value.trim())) {
+        showToast('Subscribed successfully! 🎉');
+        emailInput.value = '';
+      } else {
+        showToast('Please enter a valid email address');
+      }
+    });
+
+    // ---------- 9. Smooth Scroll for Anchor Links ----------
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // ---------- 10. Counter Animation for Hero Stats ----------
+    function animateCounters() {
+      const stats = document.querySelectorAll('.hero-stat-number');
+      stats.forEach(stat => {
+        const text = stat.textContent;
+        const hasPlus = text.includes('+');
+        const hasK = text.includes('K');
+        const target = parseInt(text.replace(/[^0-9]/g, ''));
+        
+        if (isNaN(target)) return;
+        
+        let current = 0;
+        const increment = Math.ceil(target / 60);
+        const suffix = hasPlus ? '+' : '';
+        const kSuffix = hasK ? 'K' : '';
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          stat.textContent = current + kSuffix + suffix;
+        }, 30);
+      });
+    }
+
+    // Run counter animation when hero is visible
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          heroObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+      heroObserver.observe(heroStats);
+    }
+
+    // ---------- Initialize ----------
+    handleNavbarScroll();
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
